@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Çatalca Anatolia Restaurant | Menü</title>
+    
+    <!-- Şık Fontlar -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- LÜKS RENK PALETİ --- */
+        :root {
+            --bg-dark: #121511;
+            --bg-card: #1a1e17;
+            --gold: #D4AF37;
+            --gold-light: #F3E5AB;
+            --bordo: #8B1C24;
+            --text-main: #EAEAEA;
+            --text-muted: #A0A0A0;
+            --font-title: 'Playfair Display', serif;
+            --font-body: 'Lato', sans-serif;
+            --font-accent: 'Great Vibes', cursive;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background-image: radial-gradient(circle at 50% 0%, #1e241a 0%, #121511 70%);
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- ÜST BÖLÜM (HEADER) DÜZELTİLDİ --- */
+        header {
+            text-align: center;
+            padding: 50px 20px 20px;
+            position: relative;
+            animation: fadeInUp 1s ease-out;
+            /* Flexbox ile tam ortalama sağlandı */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+        
+        .logo-area img {
+            max-width: 280px;
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.5));
+        }
+
+        .logo-title {
+            font-family: var(--font-title);
+            font-size: 2.8rem;
+            color: var(--gold);
+            font-weight: 600;
+            letter-spacing: 2px;
+            line-height: 1.1;
+            text-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+            text-align: center;
+        }
+
+        .logo-subtitle {
+            font-family: var(--font-accent);
+            font-size: 2rem;
+            color: var(--text-muted);
+            margin-top: -10px;
+            text-align: center;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 25px auto;
+            width: 80%;
+            max-width: 400px;
+        }
+        .divider::before, .divider::after {
+            content: "";
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+            flex: 1;
+        }
+        .divider i {
+            color: var(--gold);
+            margin: 0 15px;
+            font-size: 1.2rem;
+        }
+
+        /* --- KAHVALTI VURGU ALANI --- */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(26,30,23,0.9), rgba(18,21,17,0.9));
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 15px;
+            text-align: center;
+            padding: 30px 20px;
+            margin: 0 auto 20px;
+            max-width: 600px; /* Geniş ekranlarda çok yayılmasın diye sınır koyduk */
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5), inset 0 0 20px rgba(212, 175, 55, 0.05);
+            position: relative;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .hero-title {
+            font-family: var(--font-accent);
+            font-size: 2.2rem;
+            color: var(--gold);
+            margin-bottom: 5px;
+        }
+
+        .hero-desc {
+            font-family: var(--font-title);
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .hero-price {
+            display: inline-block;
+            font-family: var(--font-title);
+            font-size: 1.4rem;
+            background-color: var(--bordo);
+            color: #fff;
+            padding: 8px 25px;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(139, 28, 36, 0.4);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* --- YAPIŞKAN MENÜ ÇUBUĞU --- */
+        .category-nav {
+            position: sticky;
+            top: 0;
+            background: rgba(18, 21, 17, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 100;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            overflow-x: auto;
+            white-space: nowrap;
+            text-align: center;
+            scrollbar-width: none; 
+        }
+        .category-nav::-webkit-scrollbar { display: none; }
+
+        .nav-btn {
+            display: inline-block;
+            color: var(--gold-light);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 8px 18px;
+            margin: 0 3px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+            letter-spacing: 1px;
+        }
+
+        .nav-btn:hover, .nav-btn:active {
+            color: var(--bg-dark);
+            background-color: var(--gold);
+            border-color: var(--gold);
+        }
+
+        /* --- MENÜ İÇERİK ALANI --- */
+        main {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .menu-section {
+            margin-bottom: 50px;
+            scroll-margin-top: 80px;
+        }
+
+        .section-title {
+            font-family: var(--font-title);
+            color: var(--gold);
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '❦';
+            display: block;
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-top: 10px;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 18px 20px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .menu-item:hover {
+            background: rgba(212, 175, 55, 0.05);
+            border-color: rgba(212, 175, 55, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .item-info {
+            flex: 1;
+            padding-right: 15px;
+        }
+
+        .item-name {
+            font-family: var(--font-title);
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-main);
+            display: block;
+        }
+
+        .item-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            display: block;
+            margin-top: 4px;
+            font-style: italic;
+        }
+
+        .item-price {
+            font-family: var(--font-title);
+            font-weight: 600;
+            color: var(--gold);
+            font-size: 1.2rem;
+            white-space: nowrap;
+        }
+
+        .price-label {
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            display: block;
+            text-align: right;
+            margin-bottom: -5px;
+        }
+
+        /* --- ÖZEL GÜNLER & MEKAN ÖZELLİKLERİ --- */
+        .features-wrapper {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 0 20px;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .features-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .features-header h2 {
+            font-family: var(--font-accent);
+            color: var(--gold);
+            font-size: 2.5rem;
+        }
+
+        .feature-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .feature-box h3 {
+            font-family: var(--font-title);
+            color: var(--gold);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--gold-light);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-top: 10px;
+        }
+        .feature-list li {
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .feature-list li::before {
+            content: '✦';
+            color: var(--gold);
+            font-size: 0.8rem;
+            margin-top: 5px;
+        }
+
+        /* Rezervasyon Butonu */
+        .reservation-btn {
+            display: block;
+            text-align: center;
+            background: linear-gradient(to right, var(--bordo), #a6252e);
+            color: #fff;
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: var(--font-title);
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 0 5px 15px rgba(139, 28, 36, 0.3);
+            transition: all 0.3s ease;
+        }
+        .reservation-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 28, 36, 0.5);
+        }
+
+        /* --- ALT BİLGİ (FOOTER) --- */
+        footer {
+            background-color: #0a0c09;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            text-align: center;
+            padding: 50px 20px 30px;
+        }
+
+        .footer-title {
+            font-family: var(--font-accent);
+            color: var(--gold);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            margin-bottom: 30px;
+            font-size: 1rem;
+            color: var(--text-muted);
+        }
+
+        .contact-info p { margin-bottom: 10px; }
+
+        .contact-btn {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--gold);
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin: 10px;
+            transition: all 0.3s ease;
+            border: 1px solid var(--gold);
+        }
+
+        .contact-btn:hover {
+            background-color: var(--gold);
+            color: var(--bg-dark);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .footer-bottom {
+            margin-top: 40px;
+            font-size: 0.8rem;
+            color: #555;
+            letter-spacing: 1px;
+        }
+
+        /* Mobil Düzenlemeler */
+        @media (max-width: 480px) {
+            .logo-title { font-size: 2rem; }
+            .logo-subtitle { font-size: 1.5rem; }
+            .hero-title { font-size: 1.8rem; }
+            .menu-item { flex-direction: column; align-items: flex-start; }
+            .item-price { margin-top: 10px; font-size: 1.1rem; width: 100%; text-align: right;}
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ÜST BİLGİ -->
+    <header>
+        <div class="logo-area">
+            <!-- ⚠️ LOGO LİNKİNİZİ BULDUĞUNUZDA ÜSTTEKİ METİNLERİ SİLİP ŞU KODU AÇIN ⚠️ -->
+            <!-- <img src="logo.png" alt="Çatalca Anatolia Restaurant"> -->
+            
+            <h1 class="logo-title">ÇATALCA ANATOLİA</h1>
+            <div class="logo-subtitle">Restaurant</div>
+        </div>
+        <div class="divider"><i>✦</i></div>
+    </header>
+
+    <!-- KAHVALTI VURGUSU -->
+    <div class="hero-section">
+        <h2 class="hero-title">Serpme Kahvaltı</h2>
+        <p class="hero-desc">28 Çeşit Sınırsız Kahvaltı & Sınırsız Çay</p>
+        <span class="hero-price">Kişi Başı 700 TL</span>
+    </div>
+
+    <!-- KATEGORİ MENÜSÜ (STICKY) -->
+    <nav class="category-nav">
+        <a href="#baslangic" class="nav-btn">MEZELER</a>
+        <a href="#arasicak" class="nav-btn">ARA SICAKLAR</a>
+        <a href="#izgara" class="nav-btn">IZGARALAR</a>
+        <a href="#alkol" class="nav-btn">İÇECEKLER & ALKOL</a>
+    </nav>
+
+    <!-- MENÜ ALANI -->
+    <main>
+        
+        <!-- MEZELER -->
+        <section id="baslangic" class="menu-section">
+            <h2 class="section-title">Mezeler</h2>
+            <div class="menu-item">
+                <div class="item-info">
+                    <span class="item-name">Örnek Meze 1</span>
+                    <span class="item-desc">Açıklama buraya gelecek.</span>
+                </div>
+                <div class="item-price">XXX TL</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-info">
+                    <span class="item-name">Örnek Meze 2</span>
+                </div>
+                <div class="item-price">XXX TL</div>
+            </div>
+        </section>
+
+        <!-- ARA SICAKLAR -->
+        <section id="arasicak" class="menu-section">
+            <h2 class="section-title">Ara Sıcaklar</h2>
+            <div class="menu-item">
+                <div class="item-info">
+                    <span class="item-name">Örnek Ara Sıcak</span>
+                    <span class="item-desc">Açıklama buraya gelecek.</span>
+                </div>
+                <div class="item-price">XXX TL</div>
+            </div>
+        </section>
+
+        <!-- IZGARALAR -->
+        <section id="izgara" class="menu-section">
+            <h2 class="section-title">Izgara Çeşitleri</h2>
+            <div class="menu-item">
+                <div class="item-info">
+                    <span class="item-name">Kuzu Pirzola</span>
+                    <span class="item-desc">Özel baharatlarla marine edilmiş, közlenmiş sebzelerle servis edilir.</span>
+                </div>
+                <div>
+                    <span class="price-label">Porsiyon / Kilo</span>
+                    <div class="item-price">XXX TL</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="item-info">
+                    <span class="item-name">Kuzu Kaburga</span>
+                    <span class="item-desc">Ağır ateşte pişmiş, damakta eriyen lezzet.</span>
+                </div>
+                <div>
+                    <span class="price-label">Porsiyon / Kilo</span>
+                    <div class="item-price">XXX TL</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="item-info">
+                    <span class="item-name">Tavuk Şiş</span>
+                    <span class="item-desc">Izgara sebzeler ve pilav eşliğinde.</span>
+                </div>
+                <div>
+                    <span class="price-label">Porsiyon</span>
+                    <div class="item-price">XXX TL</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- İÇECEKLER & ALKOL -->
+        <section id="alkol" class="menu-section">
+            <h2 class="section-title">İçecekler & Alkollü Çeşitler</h2>
+            <div class="menu-item">
+                <div class="item-info">
+                    <span class="item-name">Yerli / Yabancı Biralar</span>
+                </div>
+                <div class="item-price">XXX TL</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-info">
+                    <span class="item-name">Şaraplar</span>
+                    <span class="item-desc">Kırmızı / Beyaz seçenekleri mevcuttur.</span>
+                </div>
+                <div class="item-price">XXX TL</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-info">
+                    <span class="item-name">Sınırsız Çay</span>
+                </div>
+                <div class="item-price">-</div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ÖZEL GÜNLER & MEKAN ÖZELLİKLERİ (MENÜNÜN ALTINDA) -->
+    <div class="features-wrapper">
+        <div class="features-header">
+            <h2>Özel Anlarınız İçin</h2>
+            <div class="divider"><i>✦</i></div>
+        </div>
+
+        <!-- Özel Günler -->
+        <div class="feature-box">
+            <h3>✨ Organizasyon & Kutlamalar</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px;">En özel günlerinizi doğanın içinde, unutulmaz bir atmosferde kutlayın.</p>
+            <div class="tags">
+                <span class="tag">🎂 Doğum Günü</span>
+                <span class="tag">💍 Evlilik Teklifi</span>
+                <span class="tag">💒 Düğün</span>
+                <span class="tag">👶 Baby Shower</span>
+                <span class="tag">🤝 Nişan</span>
+                <span class="tag">🕯️ Kına Gecesi</span>
+                <span class="tag">✂️ Sünnet</span>
+                <span class="tag">💖 Yıl Dönümü</span>
+            </div>
+            <!-- WhatsApp Rezervasyon Linki -->
+            <a href="https://wa.me/905373859092?text=Merhaba,%20özel%20bir%20gün%20organizasyonu%20için%20rezervasyon%20yapmak%20istiyorum." target="_blank" class="reservation-btn">📅 Rezervasyon İçin Bize Ulaşın</a>
+        </div>
+
+        <!-- Loca ve Çocuk Parkı -->
+        <div class="feature-box">
+            <h3>🔥 Özel Loca & Aile Hizmeti</h3>
+            <ul class="feature-list">
+                <li><strong>Özel Localar:</strong> İçerisinde televizyon ve ısıtıcı sobalar bulunan, size özel konforlu alanlar.</li>
+                <li><strong>Çocuk Oyun Parkı:</strong> Çocuklarınız güvenle eğlenirken, siz yemeğinizin ve sohbetinizin keyfini çıkarın.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ALT BİLGİ (İLETİŞİM) -->
+    <footer>
+        <h3 class="footer-title">Bize Ulaşın</h3>
+        
+        <div class="contact-info">
+            <p>📍 Kaleiçi, Çatalca Subaşı Yolu D:114, Çatalca/İstanbul</p>
+            <p>📞 0537 385 90 92</p>
+        </div>
+        
+        <a href="tel:+905373859092" class="contact-btn">Hemen Ara</a>
+        <a href="https://www.google.com/maps?q=%C3%87atalca+Anatolia+Restaurant,+Kalei%C3%A7i,+%C3%87atalca+Suba%C5%9F%C4%B1+Yolu+D:114,+%C3%87atalca/%C4%B0stanbul&ftid=0x14b54f20613a956b:0x7dddeeca567f2f90" target="_blank" class="contact-btn">Yol Tarifi Al</a>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Çatalca Anatolia Restaurant. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
