@@ -3,604 +3,851 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Çatalca Anatolia Restaurant | Menü</title>
+    <title>Çatalca Anatolia Restaurant & Kır Bahçesi | Menü</title>
     
-    <!-- Şık Fontlar -->
+    <!-- Doğa & Kır Bahçesi Ruhu İçin Zarif İtalik Fontlar -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,400;1,600;1,700&family=Great+Vibes&family=Montserrat:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,400;1,600;1,700&display=swap" rel="stylesheet">
     
     <style>
-        /* --- LÜKS RENK PALETİ --- */
+        /* --- DOĞAL YEŞİL & KIR BAHÇESİ PALETİ --- */
         :root {
-            --bg-dark: #121511;
-            --bg-card: #1a1e17;
-            --gold: #D4AF37;
-            --gold-light: #F3E5AB;
-            --bordo: #8B1C24;
-            --text-main: #EAEAEA;
-            --text-muted: #A0A0A0;
-            --font-title: 'Playfair Display', serif;
-            --font-body: 'Lato', sans-serif;
-            --font-accent: 'Great Vibes', cursive;
+            --bg-color: #0b1109;
+            --card-bg: #141c11;
+            --gold: #d4af37;
+            --gold-light: #f5e7a9;
+            --leaf-green: #38552f;
+            --text-main: #f5f5f5;
+            --text-muted: #a6b8a2;
+            --bordo: #8b1c24;
+            --font-serif: 'Playfair Display', serif;
+            --font-italic-accent: 'Cormorant Garamond', serif;
+            --font-script: 'Great Vibes', cursive;
+            --font-sans: 'Montserrat', sans-serif;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
         body {
-            font-family: var(--font-body);
-            background-color: var(--bg-dark);
+            font-family: var(--font-sans);
+            background-color: var(--bg-color);
             color: var(--text-main);
-            line-height: 1.7;
+            line-height: 1.6;
             overflow-x: hidden;
-            background-image: radial-gradient(circle at 50% 0%, #1e241a 0%, #121511 70%);
+            /* Ağaç gölgeleri ve yeşillik derinliği veren doğal gradyan */
+            background-image: radial-gradient(circle at 50% 10%, #172714 0%, #0b1109 78%);
+            min-height: 100vh;
         }
 
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* --- ÜST BÖLÜM (HEADER) DÜZELTİLDİ --- */
-        header {
-            text-align: center;
-            padding: 50px 20px 20px;
+        /* --- YEŞİLLİKLER & AĞAÇLAR İÇİNDE BAHÇE MASASI HERO BANNER --- */
+        .hero-banner {
             position: relative;
-            animation: fadeInUp 1s ease-out;
-            /* Flexbox ile tam ortalama sağlandı */
+            height: 350px;
+            /* Ağaçların altında, açık hava kır bahçesinde hazırlanmış gerçek masa görseli */
+            background: linear-gradient(to bottom, rgba(11, 17, 9, 0.35), rgba(11, 17, 9, 0.95)), 
+                        url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80') center center/cover no-repeat;
             display: flex;
             flex-direction: column;
-            align-items: center;
             justify-content: center;
-        }
-
-        .logo-area {
-            display: flex;
-            flex-direction: column;
             align-items: center;
-            justify-content: center;
             text-align: center;
-            margin-bottom: 10px;
-            width: 100%;
-        }
-        
-        .logo-area img {
-            max-width: 280px;
-            width: 100%;
-            height: auto;
-            filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.5));
+            padding: 20px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.25);
         }
 
-        .logo-title {
-            font-family: var(--font-title);
-            font-size: 2.8rem;
-            color: var(--gold);
-            font-weight: 600;
-            letter-spacing: 2px;
-            line-height: 1.1;
-            text-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
-            text-align: center;
-        }
-
-        .logo-subtitle {
-            font-family: var(--font-accent);
-            font-size: 2rem;
-            color: var(--text-muted);
-            margin-top: -10px;
-            text-align: center;
-        }
-
-        .divider {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 25px auto;
-            width: 80%;
-            max-width: 400px;
-        }
-        .divider::before, .divider::after {
-            content: "";
-            height: 1px;
-            background: linear-gradient(to right, transparent, var(--gold), transparent);
-            flex: 1;
-        }
-        .divider i {
-            color: var(--gold);
-            margin: 0 15px;
-            font-size: 1.2rem;
-        }
-
-        /* --- KAHVALTI VURGU ALANI --- */
-        .hero-section {
-            background: linear-gradient(135deg, rgba(26,30,23,0.9), rgba(18,21,17,0.9));
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 15px;
-            text-align: center;
-            padding: 30px 20px;
-            margin: 0 auto 20px;
-            max-width: 600px; /* Geniş ekranlarda çok yayılmasın diye sınır koyduk */
-            box-shadow: 0 15px 40px rgba(0,0,0,0.5), inset 0 0 20px rgba(212, 175, 55, 0.05);
-            position: relative;
-            animation: fadeInUp 1s ease-out 0.2s both;
-        }
-
-        .hero-title {
-            font-family: var(--font-accent);
-            font-size: 2.2rem;
-            color: var(--gold);
-            margin-bottom: 5px;
-        }
-
-        .hero-desc {
-            font-family: var(--font-title);
-            font-size: 1.1rem;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
-        }
-
-        .hero-price {
+        .brand-badge {
             display: inline-block;
-            font-family: var(--font-title);
-            font-size: 1.4rem;
-            background-color: var(--bordo);
-            color: #fff;
-            padding: 8px 25px;
-            border-radius: 50px;
-            box-shadow: 0 5px 15px rgba(139, 28, 36, 0.4);
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        /* --- YAPIŞKAN MENÜ ÇUBUĞU --- */
-        .category-nav {
-            position: sticky;
-            top: 0;
-            background: rgba(18, 21, 17, 0.95);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            z-index: 100;
-            padding: 15px 0;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            overflow-x: auto;
-            white-space: nowrap;
-            text-align: center;
-            scrollbar-width: none; 
-        }
-        .category-nav::-webkit-scrollbar { display: none; }
-
-        .nav-btn {
-            display: inline-block;
-            color: var(--gold-light);
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 700;
-            padding: 8px 18px;
-            margin: 0 3px;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-            border: 1px solid transparent;
-            letter-spacing: 1px;
-        }
-
-        .nav-btn:hover, .nav-btn:active {
-            color: var(--bg-dark);
-            background-color: var(--gold);
-            border-color: var(--gold);
-        }
-
-        /* --- MENÜ İÇERİK ALANI --- */
-        main {
-            max-width: 800px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
-
-        .menu-section {
-            margin-bottom: 50px;
-            scroll-margin-top: 80px;
-        }
-
-        .section-title {
-            font-family: var(--font-title);
-            color: var(--gold);
-            font-size: 1.8rem;
-            text-align: center;
-            margin-bottom: 25px;
-            letter-spacing: 2px;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '❦';
-            display: block;
-            font-size: 1rem;
-            color: var(--text-muted);
-            margin-top: 10px;
-        }
-
-        .menu-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 18px 20px;
-            border-radius: 12px;
-            margin-bottom: 15px;
-            transition: all 0.3s ease;
-        }
-
-        .menu-item:hover {
-            background: rgba(212, 175, 55, 0.05);
-            border-color: rgba(212, 175, 55, 0.3);
-            transform: translateY(-2px);
-        }
-
-        .item-info {
-            flex: 1;
-            padding-right: 15px;
-        }
-
-        .item-name {
-            font-family: var(--font-title);
-            font-weight: 600;
-            font-size: 1.1rem;
-            color: var(--text-main);
-            display: block;
-        }
-
-        .item-desc {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            display: block;
-            margin-top: 4px;
+            font-family: var(--font-italic-accent);
             font-style: italic;
+            font-size: 1.05rem;
+            letter-spacing: 2.5px;
+            color: var(--gold-light);
+            margin-bottom: 6px;
+            background: rgba(0, 0, 0, 0.55);
+            padding: 4px 18px;
+            border-radius: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.35);
+            backdrop-filter: blur(6px);
         }
 
-        .item-price {
-            font-family: var(--font-title);
-            font-weight: 600;
+        .brand-logo {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 2.3rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #fff;
+            margin-bottom: 4px;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.9);
+        }
+
+        .banner-title {
+            font-family: var(--font-script);
+            font-size: 3.5rem;
+            font-weight: 400;
             color: var(--gold);
-            font-size: 1.2rem;
-            white-space: nowrap;
+            line-height: 1;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.9);
         }
 
-        .price-label {
-            font-family: var(--font-body);
-            font-size: 0.7rem;
-            color: var(--text-muted);
-            display: block;
-            text-align: right;
-            margin-bottom: -5px;
-        }
-
-        /* --- ÖZEL GÜNLER & MEKAN ÖZELLİKLERİ --- */
-        .features-wrapper {
-            max-width: 800px;
-            margin: 60px auto;
+        /* --- GİRİŞ & İTALİK SLOGAN BÖLÜMÜ --- */
+        .intro-section {
+            text-align: center;
+            max-width: 720px;
+            margin: 30px auto 40px;
             padding: 0 20px;
-            animation: fadeInUp 1s ease-out 0.6s both;
         }
 
-        .features-header {
+        .sub-tag {
+            font-family: var(--font-script);
+            font-size: 2rem;
+            color: var(--gold);
+            line-height: 1.1;
+            margin-bottom: 6px;
+        }
+
+        .intro-title {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+
+        .intro-title span {
+            color: var(--gold);
+            font-family: var(--font-italic-accent);
+            font-weight: 700;
+        }
+
+        .intro-desc {
+            font-family: var(--font-italic-accent);
+            font-style: italic;
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        /* --- KATEGORİ IZGARASI --- */
+        .categories-grid {
+            max-width: 900px;
+            margin: 0 auto 50px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 25px 15px;
+            justify-items: center;
+        }
+
+        .category-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            text-align: center;
+            width: 100%;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .circle-img-wrap {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid rgba(212, 175, 55, 0.45);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            margin-bottom: 12px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            background: #172414;
+        }
+
+        .category-card:hover .circle-img-wrap {
+            border-color: var(--gold);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        .circle-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .category-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .category-name {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #fff;
+            letter-spacing: 0.5px;
+        }
+
+        /* --- DETAY SAYFASI --- */
+        .category-detail-view {
+            display: none;
+            max-width: 920px;
+            margin: 0 auto 50px;
+            padding: 0 20px;
+        }
+
+        .detail-header {
             text-align: center;
             margin-bottom: 30px;
         }
 
-        .features-header h2 {
-            font-family: var(--font-accent);
+        .back-btn {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(212, 175, 55, 0.4);
             color: var(--gold);
-            font-size: 2.5rem;
-        }
-
-        .feature-box {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-
-        .feature-box h3 {
-            font-family: var(--font-title);
-            color: var(--gold);
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            display: flex;
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1rem;
+            cursor: pointer;
+            padding: 8px 24px;
+            border-radius: 25px;
+            margin-bottom: 25px;
+            transition: all 0.3s;
+            display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 10px;
-            margin-bottom: 20px;
+        .back-btn:hover {
+            background-color: var(--gold);
+            color: #0b1109;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
         }
 
-        .tag {
-            background: rgba(212, 175, 55, 0.1);
-            color: var(--gold-light);
-            padding: 6px 15px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-        }
-
-        .feature-list {
-            list-style: none;
-            margin-top: 10px;
-        }
-        .feature-list li {
-            margin-bottom: 10px;
+        .detail-tag {
+            font-family: var(--font-italic-accent);
+            font-style: italic;
             font-size: 0.95rem;
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
+            color: var(--gold-light);
+            letter-spacing: 2px;
         }
-        .feature-list li::before {
-            content: '✦';
-            color: var(--gold);
-            font-size: 0.8rem;
+
+        .detail-title {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 2.3rem;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 1px;
             margin-top: 5px;
         }
 
-        /* Rezervasyon Butonu */
-        .reservation-btn {
+        /* --- ÜRÜN SATIRLARI --- */
+        .items-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 20px;
+        }
+
+        .food-item {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 14px 18px;
+            border-radius: 12px;
+            border: 1px solid rgba(212, 175, 55, 0.18);
+            transition: all 0.3s;
+        }
+
+        .food-item:hover {
+            background: rgba(212, 175, 55, 0.05);
+            border-color: rgba(212, 175, 55, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .item-thumb {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(212, 175, 55, 0.35);
+            margin-right: 14px;
+            flex-shrink: 0;
+            background: #172414;
+        }
+
+        .item-text {
+            flex-grow: 1;
+            padding-right: 10px;
+        }
+
+        .item-name {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: #fff;
+            letter-spacing: 0.5px;
+        }
+
+        .item-note {
+            font-family: var(--font-italic-accent);
+            font-style: italic;
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            margin-top: 3px;
+            line-height: 1.4;
+        }
+
+        .line-spacer {
+            flex-grow: 1;
+            height: 1px;
+            background: linear-gradient(to right, rgba(255,255,255,0.08), rgba(212,175,55,0.3), rgba(255,255,255,0.08));
+            margin: 0 10px;
+        }
+
+        .price-badge {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--gold-light);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 0.95rem;
+            font-weight: 700;
+            white-space: nowrap;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        /* --- ORGANİZASYON & KIR BAHÇESİ ALANLARI --- */
+        .extra-sections {
+            max-width: 850px;
+            margin: 50px auto 40px;
+            padding: 0 20px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 14px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .feature-title {
+            color: var(--gold);
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 15px 0 20px;
+        }
+
+        .tag-item {
+            background: rgba(212, 175, 55, 0.1);
+            color: #fff;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-family: var(--font-italic-accent);
+            font-style: italic;
+            font-size: 0.95rem;
+            border: 1px solid rgba(212, 175, 55, 0.25);
+        }
+
+        .btn-reservation {
             display: block;
             text-align: center;
-            background: linear-gradient(to right, var(--bordo), #a6252e);
+            background: linear-gradient(135deg, var(--bordo), #a6252e);
             color: #fff;
             text-decoration: none;
-            padding: 15px;
+            padding: 14px;
             border-radius: 8px;
-            font-family: var(--font-title);
-            font-size: 1.1rem;
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1.15rem;
             letter-spacing: 1px;
-            border: 1px solid rgba(255,255,255,0.2);
-            box-shadow: 0 5px 15px rgba(139, 28, 36, 0.3);
-            transition: all 0.3s ease;
-        }
-        .reservation-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(139, 28, 36, 0.5);
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(139, 28, 36, 0.3);
         }
 
-        /* --- ALT BİLGİ (FOOTER) --- */
+        .btn-reservation:hover {
+            opacity: 0.95;
+            box-shadow: 0 6px 20px rgba(139, 28, 36, 0.5);
+            transform: translateY(-1px);
+        }
+
+        /* --- FOOTER --- */
         footer {
-            background-color: #0a0c09;
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            background-color: #070a06;
+            border-top: 1px solid rgba(212, 175, 55, 0.15);
             text-align: center;
-            padding: 50px 20px 30px;
+            padding: 45px 20px 30px;
         }
 
-        .footer-title {
-            font-family: var(--font-accent);
+        .footer-logo {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1.6rem;
+            letter-spacing: 2px;
             color: var(--gold);
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+            margin-bottom: 12px;
         }
 
-        .contact-info {
-            margin-bottom: 30px;
-            font-size: 1rem;
+        .contact-text {
             color: var(--text-muted);
+            font-family: var(--font-italic-accent);
+            font-style: italic;
+            font-size: 1.05rem;
+            margin-bottom: 22px;
         }
 
-        .contact-info p { margin-bottom: 10px; }
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
 
-        .contact-btn {
-            display: inline-block;
-            background-color: transparent;
-            color: var(--gold);
-            text-decoration: none;
-            padding: 12px 30px;
-            border-radius: 5px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            margin: 10px;
-            transition: all 0.3s ease;
+        .btn-outline {
             border: 1px solid var(--gold);
-        }
-
-        .contact-btn:hover {
-            background-color: var(--gold);
-            color: var(--bg-dark);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
-        }
-
-        .footer-bottom {
-            margin-top: 40px;
-            font-size: 0.8rem;
-            color: #555;
+            color: var(--gold);
+            padding: 10px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 0.95rem;
             letter-spacing: 1px;
+            transition: all 0.3s;
         }
 
-        /* Mobil Düzenlemeler */
-        @media (max-width: 480px) {
-            .logo-title { font-size: 2rem; }
-            .logo-subtitle { font-size: 1.5rem; }
-            .hero-title { font-size: 1.8rem; }
-            .menu-item { flex-direction: column; align-items: flex-start; }
-            .item-price { margin-top: 10px; font-size: 1.1rem; width: 100%; text-align: right;}
+        .btn-outline:hover {
+            background-color: var(--gold);
+            color: #070a06;
+        }
+
+        .copyright {
+            color: #4f634b;
+            font-size: 0.75rem;
+        }
+
+        @media (max-width: 600px) {
+            .banner-title { font-size: 2.8rem; }
+            .brand-logo { font-size: 1.8rem; }
+            .circle-img-wrap { width: 90px; height: 90px; }
+            .category-name { font-size: 0.95rem; }
+            .items-grid { grid-template-columns: 1fr; }
+            .line-spacer { display: none; }
+            .food-item { justify-content: space-between; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ÜST BİLGİ -->
-    <header>
-        <div class="logo-area">
-            <!-- ⚠️ LOGO LİNKİNİZİ BULDUĞUNUZDA ÜSTTEKİ METİNLERİ SİLİP ŞU KODU AÇIN ⚠️ -->
-            <!-- <img src="logo.png" alt="Çatalca Anatolia Restaurant"> -->
-            
-            <h1 class="logo-title">ÇATALCA ANATOLİA</h1>
-            <div class="logo-subtitle">Restaurant</div>
-        </div>
-        <div class="divider"><i>✦</i></div>
+    <!-- AÇIK HAVADA AĞAÇLARIN İÇİNDE BAHÇE MASASI HERO BANNER -->
+    <header class="hero-banner">
+        <span class="brand-badge">Doğanın Kalbinde • Kır Bahçesi</span>
+        <div class="brand-logo">Çatalca Anatolia</div>
+        <h1 class="banner-title" id="pageMainTitle">Menümüz</h1>
     </header>
 
-    <!-- KAHVALTI VURGUSU -->
-    <div class="hero-section">
-        <h2 class="hero-title">Serpme Kahvaltı</h2>
-        <p class="hero-desc">28 Çeşit Sınırsız Kahvaltı & Sınırsız Çay</p>
-        <span class="hero-price">Kişi Başı 700 TL</span>
-    </div>
-
-    <!-- KATEGORİ MENÜSÜ (STICKY) -->
-    <nav class="category-nav">
-        <a href="#baslangic" class="nav-btn">MEZELER</a>
-        <a href="#arasicak" class="nav-btn">ARA SICAKLAR</a>
-        <a href="#izgara" class="nav-btn">IZGARALAR</a>
-        <a href="#alkol" class="nav-btn">İÇECEKLER & ALKOL</a>
-    </nav>
-
-    <!-- MENÜ ALANI -->
-    <main>
-        
-        <!-- MEZELER -->
-        <section id="baslangic" class="menu-section">
-            <h2 class="section-title">Mezeler</h2>
-            <div class="menu-item">
-                <div class="item-info">
-                    <span class="item-name">Örnek Meze 1</span>
-                    <span class="item-desc">Açıklama buraya gelecek.</span>
-                </div>
-                <div class="item-price">XXX TL</div>
-            </div>
-            <div class="menu-item">
-                <div class="item-info">
-                    <span class="item-name">Örnek Meze 2</span>
-                </div>
-                <div class="item-price">XXX TL</div>
-            </div>
-        </section>
-
-        <!-- ARA SICAKLAR -->
-        <section id="arasicak" class="menu-section">
-            <h2 class="section-title">Ara Sıcaklar</h2>
-            <div class="menu-item">
-                <div class="item-info">
-                    <span class="item-name">Örnek Ara Sıcak</span>
-                    <span class="item-desc">Açıklama buraya gelecek.</span>
-                </div>
-                <div class="item-price">XXX TL</div>
-            </div>
-        </section>
-
-        <!-- IZGARALAR -->
-        <section id="izgara" class="menu-section">
-            <h2 class="section-title">Izgara Çeşitleri</h2>
-            <div class="menu-item">
-                <div class="item-info">
-                    <span class="item-name">Kuzu Pirzola</span>
-                    <span class="item-desc">Özel baharatlarla marine edilmiş, közlenmiş sebzelerle servis edilir.</span>
-                </div>
-                <div>
-                    <span class="price-label">Porsiyon / Kilo</span>
-                    <div class="item-price">XXX TL</div>
-                </div>
-            </div>
-            <div class="menu-item">
-                <div class="item-info">
-                    <span class="item-name">Kuzu Kaburga</span>
-                    <span class="item-desc">Ağır ateşte pişmiş, damakta eriyen lezzet.</span>
-                </div>
-                <div>
-                    <span class="price-label">Porsiyon / Kilo</span>
-                    <div class="item-price">XXX TL</div>
-                </div>
-            </div>
-            <div class="menu-item">
-                <div class="item-info">
-                    <span class="item-name">Tavuk Şiş</span>
-                    <span class="item-desc">Izgara sebzeler ve pilav eşliğinde.</span>
-                </div>
-                <div>
-                    <span class="price-label">Porsiyon</span>
-                    <div class="item-price">XXX TL</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- İÇECEKLER & ALKOL -->
-        <section id="alkol" class="menu-section">
-            <h2 class="section-title">İçecekler & Alkollü Çeşitler</h2>
-            <div class="menu-item">
-                <div class="item-info">
-                    <span class="item-name">Yerli / Yabancı Biralar</span>
-                </div>
-                <div class="item-price">XXX TL</div>
-            </div>
-            <div class="menu-item">
-                <div class="item-info">
-                    <span class="item-name">Şaraplar</span>
-                    <span class="item-desc">Kırmızı / Beyaz seçenekleri mevcuttur.</span>
-                </div>
-                <div class="item-price">XXX TL</div>
-            </div>
-            <div class="menu-item">
-                <div class="item-info">
-                    <span class="item-name">Sınırsız Çay</span>
-                </div>
-                <div class="item-price">-</div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- ÖZEL GÜNLER & MEKAN ÖZELLİKLERİ (MENÜNÜN ALTINDA) -->
-    <div class="features-wrapper">
-        <div class="features-header">
-            <h2>Özel Anlarınız İçin</h2>
-            <div class="divider"><i>✦</i></div>
+    <!-- ANA MENÜ / KATEGORİ GÖRÜNÜMÜ -->
+    <div id="mainCategoryView">
+        <div class="intro-section">
+            <div class="sub-tag">Kır Bahçesi & Doğal Lezzetler</div>
+            <h2 class="intro-title">Yeşillikler İçinde <span>Lezzet</span></h2>
+            <p class="intro-desc">
+                Çatalca'nın tertemiz havasında, asırlık ağaçların gölgesinde kurulmuş soframızda; sıcacık serpme köy kahvaltısı, meşe kömüründe pişen et çeşitleri ve taptaze mezeler eşliğinde doğayla baş başa kalın.
+            </p>
         </div>
 
-        <!-- Özel Günler -->
-        <div class="feature-box">
-            <h3>✨ Organizasyon & Kutlamalar</h3>
-            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px;">En özel günlerinizi doğanın içinde, unutulmaz bir atmosferde kutlayın.</p>
-            <div class="tags">
-                <span class="tag">🎂 Doğum Günü</span>
-                <span class="tag">💍 Evlilik Teklifi</span>
-                <span class="tag">💒 Düğün</span>
-                <span class="tag">👶 Baby Shower</span>
-                <span class="tag">🤝 Nişan</span>
-                <span class="tag">🕯️ Kına Gecesi</span>
-                <span class="tag">✂️ Sünnet</span>
-                <span class="tag">💖 Yıl Dönümü</span>
+        <!-- YUVARLAK KATEGORİ SEÇİMLERİ -->
+        <div class="categories-grid">
+            <div class="category-card" onclick="openCategory('kahvalti')">
+                <div class="circle-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=300&q=80" alt="Kahvaltı">
+                </div>
+                <span class="category-name">Köy Kahvaltısı</span>
             </div>
-            <!-- WhatsApp Rezervasyon Linki -->
-            <a href="https://wa.me/905373859092?text=Merhaba,%20özel%20bir%20gün%20organizasyonu%20için%20rezervasyon%20yapmak%20istiyorum." target="_blank" class="reservation-btn">📅 Rezervasyon İçin Bize Ulaşın</a>
+
+            <div class="category-card" onclick="openCategory('mezeler')">
+                <div class="circle-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=300&q=80" alt="Mezeler">
+                </div>
+                <span class="category-name">Soğuk Mezeler</span>
+            </div>
+
+            <div class="category-card" onclick="openCategory('arasicaklar')">
+                <div class="circle-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1608897013039-887f21d8c804?auto=format&fit=crop&w=300&q=80" alt="Ara Sıcaklar">
+                </div>
+                <span class="category-name">Ara Sıcaklar</span>
+            </div>
+
+            <div class="category-card" onclick="openCategory('izgaralar')">
+                <div class="circle-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=300&q=80" alt="Et Çeşitleri">
+                </div>
+                <span class="category-name">Et Çeşitleri</span>
+            </div>
+
+            <div class="category-card" onclick="openCategory('salatalar')">
+                <div class="circle-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=300&q=80" alt="Salatalar">
+                </div>
+                <span class="category-name">Bahçe Salataları</span>
+            </div>
+
+            <div class="category-card" onclick="openCategory('icecekler')">
+                <div class="circle-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=300&q=80" alt="İçecekler">
+                </div>
+                <span class="category-name">Alkol & İçecekler</span>
+            </div>
+
+            <div class="category-card" onclick="openCategory('tatlilar')">
+                <div class="circle-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=300&q=80" alt="Tatlılar">
+                </div>
+                <span class="category-name">Meyve & Tatlı</span>
+            </div>
         </div>
 
-        <!-- Loca ve Çocuk Parkı -->
-        <div class="feature-box">
-            <h3>🔥 Özel Loca & Aile Hizmeti</h3>
-            <ul class="feature-list">
-                <li><strong>Özel Localar:</strong> İçerisinde televizyon ve ısıtıcı sobalar bulunan, size özel konforlu alanlar.</li>
-                <li><strong>Çocuk Oyun Parkı:</strong> Çocuklarınız güvenle eğlenirken, siz yemeğinizin ve sohbetinizin keyfini çıkarın.</li>
-            </ul>
+        <!-- KIR BAHÇESİ DETAYLARI & REZERVASYON -->
+        <div class="extra-sections">
+            <div class="feature-card">
+                <h3 class="feature-title">✨ Organizasyon & Kutlamalar</h3>
+                <p style="font-family: var(--font-italic-accent); font-style: italic; font-size: 1.05rem; color: var(--text-muted);">
+                    Geniş ve yemyeşil çim bahçemizde doğum günü, nişan, evlilik teklifi, kır düğünü ve özel davetlerinizi unutulmaz anılara dönüştürün[cite: 1].
+                </p>
+                <div class="tag-cloud">
+                    <span class="tag-item">🎂 Doğum Günü</span>
+                    <span class="tag-item">💍 Evlilik Teklifi</span>
+                    <span class="tag-item">💒 Kır Düğünü</span>
+                    <span class="tag-item">🤝 Nişan & Kına</span>
+                    <span class="tag-item">👶 Baby Shower</span>
+                    <span class="tag-item">💖 Yıl Dönümü</span>
+                </div>
+                <a href="https://wa.me/905373859092?text=Merhaba,%20kır%20bahçesinde%20özel%20bir%20organizasyon%20ve%20rezervasyon%20için%20bilgi%20almak%20istiyorum." target="_blank" class="btn-reservation">📅 WhatsApp ile Rezervasyon Yapın</a>
+            </div>
+
+            <div class="feature-card">
+                <h3 class="feature-title">🔥 Konforlu Kapalı Localar & Çocuk Parkı</h3>
+                <p style="font-family: var(--font-italic-accent); font-style: italic; font-size: 1.05rem; color: #ddd; margin-bottom: 8px;">
+                    <strong>Özel Localar:</strong> Dört mevsim boyunca açık havayı izleyebileceğiniz, televizyonlu ve ısıtıcı sobalı sıcacık müstakil alanlar[cite: 1].
+                </p>
+                <p style="font-family: var(--font-italic-accent); font-style: italic; font-size: 1.05rem; color: #ddd;">
+                    <strong>Güvenli Çocuk Parkı:</strong> Doğanın ortasında, çocuklarınız neşeyle oyun oynarken siz sakinliğin ve lezzetin tadına varın[cite: 1].
+                </p>
+            </div>
         </div>
     </div>
 
-    <!-- ALT BİLGİ (İLETİŞİM) -->
+    <!-- KATEGORİ DETAY LİSTE GÖRÜNÜMÜ -->
+    <div id="detailView" class="category-detail-view">
+        <div class="detail-header">
+            <button class="back-btn" onclick="showMainCategories()">← Menüye Dön</button>
+            <div class="detail-tag">• Fiyat Listesi •</div>
+            <h2 class="detail-title" id="detailCategoryTitle">Köy Kahvaltısı</h2>
+        </div>
+
+        <div class="items-grid" id="itemsContainer">
+            <!-- JavaScript burayı dinamik dolduracak -->
+        </div>
+    </div>
+
+    <!-- ALT BİLGİ (FOOTER) -->
     <footer>
-        <h3 class="footer-title">Bize Ulaşın</h3>
-        
-        <div class="contact-info">
-            <p>📍 Kaleiçi, Çatalca Subaşı Yolu D:114, Çatalca/İstanbul</p>
-            <p>📞 0537 385 90 92</p>
+        <div class="footer-logo">Çatalca Anatolia Restaurant & Kır Bahçesi</div>
+        <div class="contact-text">
+            <p>📍 Kaleiçi, Çatalca Subaşı Yolu D:114, Çatalca / İstanbul[cite: 1]</p>
+            <p>📞 0537 385 90 92[cite: 1]</p>
         </div>
-        
-        <a href="tel:+905373859092" class="contact-btn">Hemen Ara</a>
-        <a href="https://www.google.com/maps?q=%C3%87atalca+Anatolia+Restaurant,+Kalei%C3%A7i,+%C3%87atalca+Suba%C5%9F%C4%B1+Yolu+D:114,+%C3%87atalca/%C4%B0stanbul&ftid=0x14b54f20613a956b:0x7dddeeca567f2f90" target="_blank" class="contact-btn">Yol Tarifi Al</a>
-
-        <div class="footer-bottom">
-            <p>&copy; 2024 Çatalca Anatolia Restaurant. Tüm hakları saklıdır.</p>
+        <div class="contact-buttons">
+            <a href="tel:+905373859092" class="btn-outline">Hemen Ara</a>
+            <a href="https://www.google.com/maps?q=%C3%87atalca+Anatolia+Restaurant,+Kalei%C3%A7i,+%C3%87atalca+Suba%C5%9F%C4%B1+Yolu+D:114,+%C3%87atalca/%C4%B0stanbul" target="_blank" class="btn-outline">Yol Tarifi Al</a>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Çatalca Anatolia Restaurant & Kır Bahçesi. Tüm Hakları Saklıdır.
         </div>
     </footer>
 
+    <!-- TÜM YEMEKLERİN BİREBİR GERÇEK GÖRSEL VERİTABANI -->
+    <script>
+        const menuData = {
+            kahvalti: {
+                title: "Köy Kahvaltısı",
+                items: [
+                    { 
+                        name: "Serpme Köy Kahvaltısı (Kişi Başı)", 
+                        note: "28 çeşit sınırsız kahvaltı & semaverde doğal demlenmiş çay", 
+                        price: "700 ₺", 
+                        img: "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=250&q=80" 
+                    },
+                    { 
+                        name: "Trabzon Usulü Muhlama / Kuymak", 
+                        note: "Özel mısır unu, yayık tereyağı ve uzayan kolot peyniri", 
+                        price: "280 ₺", 
+                        img: "https://images.unsplash.com/photo-1541832676-9b763b0239ab?auto=format&fit=crop&w=250&q=80" 
+                    },
+                    { 
+                        name: "Bakır Sahanda Menemen", 
+                        note: "Köy yumurtası, bahçe domatesi ve çıtır köy biberi", 
+                        price: "200 ₺", 
+                        img: "https://images.unsplash.com/photo-1590412200988-a436970781fa?auto=format&fit=crop&w=250&q=80" 
+                    },
+                    { 
+                        name: "Kaşarlı Menemen", 
+                        note: "Eriyen taze kaşar peyniri eşliğinde sahanda", 
+                        price: "240 ₺", 
+                        img: "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=250&q=80" 
+                    },
+                    { 
+                        name: "Sucuklu Yumurta", 
+                        note: "Kendi yağında kızarmış dana kasap sucuk ile", 
+                        price: "260 ₺", 
+                        img: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=250&q=80" 
+                    },
+                    { 
+                        name: "Kavurmalı Yumurta", 
+                        note: "Rize kavurması ve tereyağında pişmiş köy yumurtası", 
+                        price: "300 ₺", 
+                        img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=250&q=80" 
+                    },
+                    { 
+                        name: "Paçanga Böreği (Adet)", 
+                        note: "Kayseri pastırması, kaşar ve yeşil biber dolgulu çıtır lezzet", 
+                        price: "140 ₺", 
+                        img: "https://images.unsplash.com/photo-1509722747041-616f39b57569?auto=format&fit=crop&w=250&q=80" 
+                    },
+                    { 
+                        name: "Sigara Böreği (Porsiyon)", 
+                        note: "Taze ezine ve lor peynirli çıtır ev böreği", 
+                        price: "180 ₺", 
+                        img: "https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=250&q=80" 
+                    }
+                ]
+            },
+            mezeler: {
+                title: "Soğuk Mezeler",
+                items: [
+                    { 
+                        name: "Süzme Haydari", 
+                        note: "Yoğun süzme yoğurt, sarımsak, taze nane ve sızma zeytinyağı", 
+                        price: "160 ₺", 
+                        img: "https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=250&q=80" 
+                    },
+                    { 
+                        name: "Geleneksel Şakşuka", 
+                        note: "Kızarmış patlıcan, tatlı biber ve sarımsaklı domates sosu", 
+                        price: "170 ₺", 
+                        img: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=250&q=80" 
+                    },
+                    { 
+                        name: "Acılı Atom", 
+                        note: "Tereyağında sotelenmiş acı Arnavut biberi ve süzme yoğurt", 
+                        price: "180 ₺", 
+                        img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=250&q=80" 
+                    },
+                    { 
+                        name: "Fıstıklı Girit Ezmesi", 
+                        note: "Ezine peyniri, ceviz, Antep fıstığı ve bahçe zeytinyağı", 
+                        price: "190 ₺", 
+                        img: "https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=250&q=80" 
+                    },
+                    { 
+                        name: "Köpoğlu Mancası", 
+                        note: "Köz patlıcan, süzme yoğurt ve tereyağlı domates sosu", 
+                        price: "175 ₺", 
+                        img: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=250&q=80" 
+                    }
+                ]
+            },
+            arasicaklar: {
+                title: "Ara Sıcaklar",
+                items: [
+                    { 
+                        name: "Güveçte Kaşarlı Mantar", 
+                        note: "Odun fırınında tereyağlı ve nar gibi kızarmış kaşarlı mantar", 
+                        price: "240 ₺", 
+                        img: "https://images.unsplash.com/photo-1608897013039-887f21d8c804?auto=format&fit=crop&w=250&q=80" 
+                    },
+                    { 
+                        name: "Yaprak Ciğer", 
+                        note: "İncecik doğranmış dana ciğeri, sumaklı piyaz soğan eşliğinde", 
+                        price: "340 ₺", 
+                        img: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=250&q=80" 
+                    },
+                    { 
+                        name: "Kızarmış İçli Köfte (Adet)", 
+                        note: "Ceviz ve baharatlarla harmanlanmış dana kıymalı iç dolgu", 
+                        price: "120 ₺", 
+                        img: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=250&q=80" 
+                    }
+                ]
+            },
+            izgaralar: {
+                title: "Et Çeşitleri & Izgaralar",
+                items: [
+                    { 
+                        name: "Kuzu Pirzola", 
+                        note: "Marine edilmiş kuzu kalem pirzola, köz biber & domatesle", 
+                        price: "680 ₺", 
+                        img: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=250&q=80" 
+                    },
+                    { 
+                        name: "Kuzu Kaburga", 
+                        note: "Meşe kömüründe nar gibi kızarmış lokum kaburga", 
+                        price: "620 ₺", 
+                        img: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=250&q=80" 
+                    },
+                    { 
+                        name: "Kasap Köfte", 
+                        note: "Geleneksel baharat karışımı, ızgara biber ve sumaklı soğanla", 
+                        price: "420 ₺", 
+                        img: "https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=250&q=80" 
+                    },
+                    { 
+                        name: "Lokum Tavuk Şiş", 
+                        note: "Özel yoğurt sosunda marine edilmiş yumuşacık tavuk göğsü", 
+                        price: "360 ₺", 
+                        img: "https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=250&q=80" 
+                    },
+                    { 
+                        name: "Karışık Izgara Şöleni (2 Kişilik)", 
+                        note: "Pirzola, köfte, tavuk şiş, kasap sucuk ve köz lezzetleri", 
+                        price: "1.250 ₺", 
+                        img: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=250&q=80" 
+                    }
+                ]
+            },
+            salatalar: {
+                title: "Bahçe Salataları",
+                items: [
+                    { 
+                        name: "Gavurdağı Salatası", 
+                        note: "Küp bahçe domatesi, ceviz içi ve Hatay nar ekşisi ile", 
+                        price: "220 ₺", 
+                        img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=250&q=80" 
+                    },
+                    { 
+                        name: "Kır Bahçesi Mevsim Salatası", 
+                        note: "Taze roka, göbek, havuç, mor lahana ve zeytinyağlı limon sosu", 
+                        price: "180 ₺", 
+                        img: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=250&q=80" 
+                    }
+                ]
+            },
+            icecekler: {
+                title: "Alkol & İçecekler",
+                items: [
+                    { 
+                        name: "Yerli / Yabancı Soğuk Biralar", 
+                        note: "50 cl şişe ve kutu alternatifleri", 
+                        price: "160 ₺ - 220 ₺", 
+                        img: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=250&q=80" 
+                    },
+                    { 
+                        name: "Özel Şaraplar (Kadeh / Şişe)", 
+                        note: "Kırmızı, Beyaz ve Roze seçenekleri", 
+                        price: "280 ₺ / 950 ₺", 
+                        img: "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=250&q=80" 
+                    },
+                    { 
+                        name: "Meşrubat Çeşitleri", 
+                        note: "Kola, Fanta, Gazoz, Cappy Meyve Suyu", 
+                        price: "70 ₺", 
+                        img: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=250&q=80" 
+                    },
+                    { 
+                        name: "Köpüklü Yayık Ayranı", 
+                        note: "Geleneksel yöntemle çalkalanmış taze yayık ayranı", 
+                        price: "50 ₺", 
+                        img: "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=250&q=80" 
+                    },
+                    { 
+                        name: "Semaverde Odun Ateşi Çayı", 
+                        note: "Kır bahçemizde misafirlerimize sınırsız ikramımızdır", 
+                        price: "İkram", 
+                        img: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=250&q=80" 
+                    }
+                ]
+            },
+            tatlilar: {
+                title: "Meyve & Tatlı",
+                items: [
+                    { 
+                        name: "Hatay Usulü Çıtır Künefe", 
+                        note: "Sıcak şerbet, tuzsuz künefe peyniri ve Maraş dondurması", 
+                        price: "250 ₺", 
+                        img: "https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=250&q=80" 
+                    },
+                    { 
+                        name: "Mevsim Meyve Tabağı", 
+                        note: "Özenle dilimlenmiş taptaze bahçe ve mevsim meyveleri", 
+                        price: "280 ₺", 
+                        img: "https://images.unsplash.com/photo-1619566636858-adf3ef46400b?auto=format&fit=crop&w=250&q=80" 
+                    }
+                ]
+            }
+        };
+
+        function openCategory(key) {
+            const data = menuData[key];
+            if (!data) return;
+
+            document.getElementById('pageMainTitle').innerText = data.title;
+            document.getElementById('detailCategoryTitle').innerText = data.title;
+
+            const container = document.getElementById('itemsContainer');
+            container.innerHTML = '';
+
+            data.items.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'food-item';
+                itemDiv.innerHTML = `
+                    <img src="${item.img}" alt="${item.name}" class="item-thumb">
+                    <div class="item-text">
+                        <div class="item-name">${item.name}</div>
+                        <div class="item-note">${item.note}</div>
+                    </div>
+                    <div class="line-spacer"></div>
+                    <div class="price-badge">${item.price}</div>
+                `;
+                container.appendChild(itemDiv);
+            });
+
+            document.getElementById('mainCategoryView').style.display = 'none';
+            document.getElementById('detailView').style.display = 'block';
+            window.scrollTo({ top: 250, behavior: 'smooth' });
+        }
+
+        function showMainCategories() {
+            document.getElementById('pageMainTitle').innerText = 'Menümüz';
+            document.getElementById('detailView').style.display = 'none';
+            document.getElementById('mainCategoryView').style.display = 'block';
+            window.scrollTo({ top: 250, behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
