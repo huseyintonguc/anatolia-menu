@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Çatalca Anatolia Restaurant & Kır Bahçesi | Menü</title>
     
-    <!-- Doğa & Kır Bahçesi Ruhu İçin Zarif İtalik Fontlar -->
+    <!-- Doğa & Kır Bahçesi Ruhu İçin Zarif Fontlar -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,400;1,600;1,700&family=Great+Vibes&family=Montserrat:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,400;1,600;1,700&display=swap" rel="stylesheet">
     
     <style>
-        /* --- DOĞAL YEŞİL & KIR BAHÇESİ PALETİ --- */
         :root {
             --bg-color: #0b1109;
             --card-bg: #141c11;
@@ -40,18 +39,16 @@
             color: var(--text-main);
             line-height: 1.6;
             overflow-x: hidden;
-            /* Ağaç gölgeleri ve yeşillik derinliği veren doğal gradyan */
             background-image: radial-gradient(circle at 50% 10%, #172714 0%, #0b1109 78%);
             min-height: 100vh;
         }
 
-        /* --- YEŞİLLİKLER & AĞAÇLAR İÇİNDE BAHÇE MASASI HERO BANNER --- */
+        /* --- AĞAÇLAR & YEŞİLLİKLER İÇİNDE KIR BAHÇESİ HERO BANNER --- */
         .hero-banner {
             position: relative;
-            height: 350px;
-            /* Ağaçların altında, açık hava kır bahçesinde hazırlanmış gerçek masa görseli */
+            height: 360px;
             background: linear-gradient(to bottom, rgba(11, 17, 9, 0.35), rgba(11, 17, 9, 0.95)), 
-                        url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80') center center/cover no-repeat;
+                        url('https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=1600&q=80') center center/cover no-repeat;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -66,10 +63,10 @@
             font-family: var(--font-italic-accent);
             font-style: italic;
             font-size: 1.05rem;
-            letter-spacing: 2.5px;
+            letter-spacing: 2px;
             color: var(--gold-light);
-            margin-bottom: 6px;
-            background: rgba(0, 0, 0, 0.55);
+            margin-bottom: 8px;
+            background: rgba(0, 0, 0, 0.65);
             padding: 4px 18px;
             border-radius: 20px;
             border: 1px solid rgba(212, 175, 55, 0.35);
@@ -79,7 +76,7 @@
         .brand-logo {
             font-family: var(--font-serif);
             font-style: italic;
-            font-size: 2.3rem;
+            font-size: 2.4rem;
             font-weight: 700;
             letter-spacing: 2px;
             color: #fff;
@@ -92,11 +89,11 @@
             font-size: 3.5rem;
             font-weight: 400;
             color: var(--gold);
-            line-height: 1;
+            line-height: 1.1;
             text-shadow: 0 4px 20px rgba(0,0,0,0.9);
         }
 
-        /* --- GİRİŞ & İTALİK SLOGAN BÖLÜMÜ --- */
+        /* --- GİRİŞ & İTALİK SLOGAN --- */
         .intro-section {
             text-align: center;
             max-width: 720px;
@@ -155,6 +152,9 @@
             transition: transform 0.3s ease;
             text-align: center;
             width: 100%;
+            border: none;
+            background: transparent;
+            color: inherit;
         }
 
         .category-card:hover {
@@ -183,6 +183,7 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.4s ease;
+            display: block;
         }
 
         .category-card:hover img {
@@ -204,6 +205,7 @@
             max-width: 920px;
             margin: 0 auto 50px;
             padding: 0 20px;
+            scroll-margin-top: 30px;
         }
 
         .detail-header {
@@ -221,7 +223,7 @@
             cursor: pointer;
             padding: 8px 24px;
             border-radius: 25px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             transition: all 0.3s;
             display: inline-flex;
             align-items: center;
@@ -252,7 +254,21 @@
             margin-top: 5px;
         }
 
-        /* --- ÜRÜN SATIRLARI --- */
+        .category-info-notice {
+            font-family: var(--font-italic-accent);
+            font-style: italic;
+            font-size: 1.05rem;
+            color: var(--gold-light);
+            background: rgba(212, 175, 55, 0.08);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            border-radius: 10px;
+            padding: 12px 20px;
+            margin: 15px auto 25px;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        /* --- ÜRÜN KARTLARI --- */
         .items-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
@@ -267,6 +283,7 @@
             border-radius: 12px;
             border: 1px solid rgba(212, 175, 55, 0.18);
             transition: all 0.3s;
+            gap: 14px;
         }
 
         .food-item:hover {
@@ -281,14 +298,12 @@
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid rgba(212, 175, 55, 0.35);
-            margin-right: 14px;
             flex-shrink: 0;
             background: #172414;
         }
 
         .item-text {
             flex-grow: 1;
-            padding-right: 10px;
         }
 
         .item-name {
@@ -313,7 +328,6 @@
             flex-grow: 1;
             height: 1px;
             background: linear-gradient(to right, rgba(255,255,255,0.08), rgba(212,175,55,0.3), rgba(255,255,255,0.08));
-            margin: 0 10px;
         }
 
         .price-badge {
@@ -328,9 +342,17 @@
             white-space: nowrap;
             box-shadow: 0 2px 8px rgba(0,0,0,0.5);
             border: 1px solid rgba(212, 175, 55, 0.3);
+            flex-shrink: 0;
         }
 
-        /* --- ORGANİZASYON & KIR BAHÇESİ ALANLARI --- */
+        .price-badge.no-price {
+            font-size: 0.85rem;
+            background: rgba(212, 175, 55, 0.15);
+            border-color: rgba(212, 175, 55, 0.4);
+            color: var(--gold-light);
+        }
+
+        /* --- ORGANİZASYON & EXTRA BÖLÜM --- */
         .extra-sections {
             max-width: 850px;
             margin: 50px auto 40px;
@@ -464,81 +486,81 @@
 </head>
 <body>
 
-    <!-- AÇIK HAVADA AĞAÇLARIN İÇİNDE BAHÇE MASASI HERO BANNER -->
+    <!-- YEMYEŞİL AĞAÇLAR & ÇİMLER İÇİNDE BAHÇE MASASI GÖRSELİ -->
     <header class="hero-banner">
         <span class="brand-badge">Doğanın Kalbinde • Kır Bahçesi</span>
         <div class="brand-logo">Çatalca Anatolia</div>
         <h1 class="banner-title" id="pageMainTitle">Menümüz</h1>
     </header>
 
-    <!-- ANA MENÜ / KATEGORİ GÖRÜNÜMÜ -->
-    <div id="mainCategoryView">
-        <div class="intro-section">
+    <!-- ANA MENÜ / KATEGORİ SEÇİMLERİ -->
+    <main id="mainCategoryView">
+        <section class="intro-section">
             <div class="sub-tag">Kır Bahçesi & Doğal Lezzetler</div>
             <h2 class="intro-title">Yeşillikler İçinde <span>Lezzet</span></h2>
             <p class="intro-desc">
-                Çatalca'nın tertemiz havasında, asırlık ağaçların gölgesinde kurulmuş soframızda; sıcacık serpme köy kahvaltısı, meşe kömüründe pişen et çeşitleri ve taptaze mezeler eşliğinde doğayla baş başa kalın.
+                Çatalca'nın tertemiz havasında, ulu ağaçların gölgesinde kurulmuş soframızda; sıcacık serpme köy kahvaltısı, meşe kömüründe pişen et çeşitleri, yöresel ara sıcaklar ve taptaze mezeler eşliğinde doğayla buluşun.
             </p>
-        </div>
+        </section>
 
-        <!-- YUVARLAK KATEGORİ SEÇİMLERİ -->
-        <div class="categories-grid">
-            <div class="category-card" onclick="openCategory('kahvalti')">
+        <!-- YUVARLAK KATEGORİ BUTONLARI -->
+        <nav class="categories-grid" aria-label="Menü Kategorileri">
+            <button class="category-card" onclick="openCategory('kahvalti')">
                 <div class="circle-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=300&q=80" alt="Kahvaltı">
+                    <img src="https://i.ibb.co/CZ89s4K/KAHVALT.jpg" alt="Köy Kahvaltısı" loading="lazy">
                 </div>
                 <span class="category-name">Köy Kahvaltısı</span>
-            </div>
+            </button>
 
-            <div class="category-card" onclick="openCategory('mezeler')">
+            <button class="category-card" onclick="openCategory('mezeler')">
                 <div class="circle-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=300&q=80" alt="Mezeler">
+                    <img src="https://i.ibb.co/FkbgKdJc/KAVUN.jpg" alt="Meze Çeşitleri" loading="lazy">
                 </div>
-                <span class="category-name">Soğuk Mezeler</span>
-            </div>
+                <span class="category-name">Meze Çeşitleri</span>
+            </button>
 
-            <div class="category-card" onclick="openCategory('arasicaklar')">
+            <button class="category-card" onclick="openCategory('arasicaklar')">
                 <div class="circle-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1608897013039-887f21d8c804?auto=format&fit=crop&w=300&q=80" alt="Ara Sıcaklar">
+                    <img src="https://i.ibb.co/PsRVNgCR/KA-ARL-MANTAR.jpg" alt="Ara Sıcaklar" loading="lazy">
                 </div>
                 <span class="category-name">Ara Sıcaklar</span>
-            </div>
+            </button>
 
-            <div class="category-card" onclick="openCategory('izgaralar')">
+            <button class="category-card" onclick="openCategory('izgaralar')">
                 <div class="circle-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=300&q=80" alt="Et Çeşitleri">
+                    <img src="https://i.ibb.co/5gmPhv2G/KUZU.jpg" alt="Et Çeşitleri" loading="lazy">
                 </div>
                 <span class="category-name">Et Çeşitleri</span>
-            </div>
+            </button>
 
-            <div class="category-card" onclick="openCategory('salatalar')">
+            <button class="category-card" onclick="openCategory('tatlilar')">
                 <div class="circle-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=300&q=80" alt="Salatalar">
+                    <img src="https://i.ibb.co/SDkHHbQm/MEVS-M-MEYVELER-TABA.jpg" alt="Tatlı & Meyve" loading="lazy">
                 </div>
-                <span class="category-name">Bahçe Salataları</span>
-            </div>
+                <span class="category-name">Tatlı & Meyve</span>
+            </button>
 
-            <div class="category-card" onclick="openCategory('icecekler')">
+            <button class="category-card" onclick="openCategory('icecekler')">
                 <div class="circle-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=300&q=80" alt="İçecekler">
+                    <img src="https://i.ibb.co/s9cQzTXj/SEMAVER-AY.jpg" alt="İçecek Çeşitleri" loading="lazy">
                 </div>
-                <span class="category-name">Alkol & İçecekler</span>
-            </div>
+                <span class="category-name">İçecek Çeşitleri</span>
+            </button>
 
-            <div class="category-card" onclick="openCategory('tatlilar')">
+            <button class="category-card" onclick="openCategory('alkol')">
                 <div class="circle-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=300&q=80" alt="Tatlılar">
+                    <img src="https://i.ibb.co/xK1hJY9J/T-RK-KAHVES.jpg" alt="Alkollü Çeşitler" loading="lazy">
                 </div>
-                <span class="category-name">Meyve & Tatlı</span>
-            </div>
-        </div>
+                <span class="category-name">Alkollü Çeşitler</span>
+            </button>
+        </nav>
 
-        <!-- KIR BAHÇESİ DETAYLARI & REZERVASYON -->
-        <div class="extra-sections">
+        <!-- KIR BAHÇESİ ÖZEL ALANLAR & REZERVASYON -->
+        <section class="extra-sections">
             <div class="feature-card">
                 <h3 class="feature-title">✨ Organizasyon & Kutlamalar</h3>
                 <p style="font-family: var(--font-italic-accent); font-style: italic; font-size: 1.05rem; color: var(--text-muted);">
-                    Geniş ve yemyeşil çim bahçemizde doğum günü, nişan, evlilik teklifi, kır düğünü ve özel davetlerinizi unutulmaz anılara dönüştürün[cite: 1].
+                    Geniş ve yemyeşil çim bahçemizde doğum günü, nişan, evlilik teklifi, kır düğünü ve özel davetlerinizi unutulmaz anılara dönüştürün.
                 </p>
                 <div class="tag-cloud">
                     <span class="tag-item">🎂 Doğum Günü</span>
@@ -548,276 +570,176 @@
                     <span class="tag-item">👶 Baby Shower</span>
                     <span class="tag-item">💖 Yıl Dönümü</span>
                 </div>
-                <a href="https://wa.me/905373859092?text=Merhaba,%20kır%20bahçesinde%20özel%20bir%20organizasyon%20ve%20rezervasyon%20için%20bilgi%20almak%20istiyorum." target="_blank" class="btn-reservation">📅 WhatsApp ile Rezervasyon Yapın</a>
+                <a href="https://wa.me/905373859092?text=Merhaba,%20kır%20bahçesinde%20özel%20bir%20organizasyon%20ve%20rezervasyon%20için%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" class="btn-reservation">📅 WhatsApp ile Rezervasyon Yapın</a>
             </div>
 
             <div class="feature-card">
                 <h3 class="feature-title">🔥 Konforlu Kapalı Localar & Çocuk Parkı</h3>
                 <p style="font-family: var(--font-italic-accent); font-style: italic; font-size: 1.05rem; color: #ddd; margin-bottom: 8px;">
-                    <strong>Özel Localar:</strong> Dört mevsim boyunca açık havayı izleyebileceğiniz, televizyonlu ve ısıtıcı sobalı sıcacık müstakil alanlar[cite: 1].
+                    <strong>Özel Localar:</strong> Dört mevsim boyunca açık havayı izleyebileceğiniz, televizyonlu ve ısıtıcı sobalı sıcacık müstakil alanlar.
                 </p>
                 <p style="font-family: var(--font-italic-accent); font-style: italic; font-size: 1.05rem; color: #ddd;">
-                    <strong>Güvenli Çocuk Parkı:</strong> Doğanın ortasında, çocuklarınız neşeyle oyun oynarken siz sakinliğin ve lezzetin tadına varın[cite: 1].
+                    <strong>Güvenli Çocuk Parkı:</strong> Doğanın ortasında, çocuklarınız neşeyle oyun oynarken siz sakinliğin ve lezzetin tadına varın.
                 </p>
             </div>
-        </div>
-    </div>
+        </section>
+    </main>
 
     <!-- KATEGORİ DETAY LİSTE GÖRÜNÜMÜ -->
-    <div id="detailView" class="category-detail-view">
+    <section id="detailView" class="category-detail-view" aria-live="polite">
         <div class="detail-header">
-            <button class="back-btn" onclick="showMainCategories()">← Menüye Dön</button>
+            <button class="back-btn" onclick="showMainCategories(true)">← Menüye Dön</button>
             <div class="detail-tag">• Fiyat Listesi •</div>
-            <h2 class="detail-title" id="detailCategoryTitle">Köy Kahvaltısı</h2>
+            <h2 class="detail-title" id="detailCategoryTitle">Kategori</h2>
+            <div id="categoryNotice" class="category-info-notice" style="display: none;"></div>
         </div>
 
-        <div class="items-grid" id="itemsContainer">
-            <!-- JavaScript burayı dinamik dolduracak -->
-        </div>
-    </div>
+        <div class="items-grid" id="itemsContainer"></div>
+    </section>
 
     <!-- ALT BİLGİ (FOOTER) -->
     <footer>
         <div class="footer-logo">Çatalca Anatolia Restaurant & Kır Bahçesi</div>
         <div class="contact-text">
-            <p>📍 Kaleiçi, Çatalca Subaşı Yolu D:114, Çatalca / İstanbul[cite: 1]</p>
-            <p>📞 0537 385 90 92[cite: 1]</p>
+            <p>📍 Kaleiçi, Çatalca Subaşı Yolu D:114, Çatalca / İstanbul</p>
+            <p>📞 0537 385 90 92</p>
         </div>
         <div class="contact-buttons">
             <a href="tel:+905373859092" class="btn-outline">Hemen Ara</a>
-            <a href="https://www.google.com/maps?q=%C3%87atalca+Anatolia+Restaurant,+Kalei%C3%A7i,+%C3%87atalca+Suba%C5%9F%C4%B1+Yolu+D:114,+%C3%87atalca/%C4%B0stanbul" target="_blank" class="btn-outline">Yol Tarifi Al</a>
+            <a href="https://www.google.com/maps?q=%C3%87atalca+Anatolia+Restaurant,+Kalei%C3%A7i,+%C3%87atalca+Suba%C5%9F%C4%B1+Yolu+D:114,+%C3%87atalca/%C4%B0stanbul" target="_blank" rel="noopener noreferrer" class="btn-outline">Yol Tarifi Al</a>
         </div>
         <div class="copyright">
             &copy; 2026 Çatalca Anatolia Restaurant & Kır Bahçesi. Tüm Hakları Saklıdır.
         </div>
     </footer>
 
-    <!-- TÜM YEMEKLERİN BİREBİR GERÇEK GÖRSEL VERİTABANI -->
+    <!-- DÜZELTİLMİŞ MENÜ VERİTABANI -->
     <script>
         const menuData = {
             kahvalti: {
-                title: "Köy Kahvaltısı",
+                title: "Serpme Köy Kahvaltısı",
+                notice: "27 Çeşit Sınırsız Serpme Kahvaltı • Ekmek ve çay kahvaltıya dahildir.",
                 items: [
                     { 
-                        name: "Serpme Köy Kahvaltısı (Kişi Başı)", 
-                        note: "28 çeşit sınırsız kahvaltı & semaverde doğal demlenmiş çay", 
-                        price: "700 ₺", 
-                        img: "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=250&q=80" 
-                    },
-                    { 
-                        name: "Trabzon Usulü Muhlama / Kuymak", 
-                        note: "Özel mısır unu, yayık tereyağı ve uzayan kolot peyniri", 
-                        price: "280 ₺", 
-                        img: "https://images.unsplash.com/photo-1541832676-9b763b0239ab?auto=format&fit=crop&w=250&q=80" 
-                    },
-                    { 
-                        name: "Bakır Sahanda Menemen", 
-                        note: "Köy yumurtası, bahçe domatesi ve çıtır köy biberi", 
-                        price: "200 ₺", 
-                        img: "https://images.unsplash.com/photo-1590412200988-a436970781fa?auto=format&fit=crop&w=250&q=80" 
-                    },
-                    { 
-                        name: "Kaşarlı Menemen", 
-                        note: "Eriyen taze kaşar peyniri eşliğinde sahanda", 
-                        price: "240 ₺", 
-                        img: "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=250&q=80" 
-                    },
-                    { 
-                        name: "Sucuklu Yumurta", 
-                        note: "Kendi yağında kızarmış dana kasap sucuk ile", 
-                        price: "260 ₺", 
-                        img: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=250&q=80" 
-                    },
-                    { 
-                        name: "Kavurmalı Yumurta", 
-                        note: "Rize kavurması ve tereyağında pişmiş köy yumurtası", 
-                        price: "300 ₺", 
-                        img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=250&q=80" 
-                    },
-                    { 
-                        name: "Paçanga Böreği (Adet)", 
-                        note: "Kayseri pastırması, kaşar ve yeşil biber dolgulu çıtır lezzet", 
-                        price: "140 ₺", 
-                        img: "https://images.unsplash.com/photo-1509722747041-616f39b57569?auto=format&fit=crop&w=250&q=80" 
-                    },
-                    { 
-                        name: "Sigara Böreği (Porsiyon)", 
-                        note: "Taze ezine ve lor peynirli çıtır ev böreği", 
-                        price: "180 ₺", 
-                        img: "https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=250&q=80" 
+                        name: "27 Çeşit Sınırsız Serpme Kahvaltı", 
+                        note: "Roka, Maydanoz, Domates, Salatalık, Biber, Beyaz Peynir, Kaşar, Köy Peyniri, Topi & Burgu Peynir, Havuç Tarator, Acuka, Yeşil/Siyah Zeytin, Yaz Helvası, Nutella, Tahin-Pekmez, Vişne Reçeli, Bal, Kaymak, Patates, Gözleme, Patlıcan & Biber Kızartma, Sucuklu Yumurta, Menemen", 
+                        price: "700 ₺ / Kişi Başı", 
+                        img: "https://i.ibb.co/CZ89s4K/KAHVALT.jpg" 
                     }
                 ]
             },
             mezeler: {
-                title: "Soğuk Mezeler",
+                title: "Meze Çeşitleri",
                 items: [
-                    { 
-                        name: "Süzme Haydari", 
-                        note: "Yoğun süzme yoğurt, sarımsak, taze nane ve sızma zeytinyağı", 
-                        price: "160 ₺", 
-                        img: "https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=250&q=80" 
-                    },
-                    { 
-                        name: "Geleneksel Şakşuka", 
-                        note: "Kızarmış patlıcan, tatlı biber ve sarımsaklı domates sosu", 
-                        price: "170 ₺", 
-                        img: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=250&q=80" 
-                    },
-                    { 
-                        name: "Acılı Atom", 
-                        note: "Tereyağında sotelenmiş acı Arnavut biberi ve süzme yoğurt", 
-                        price: "180 ₺", 
-                        img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=250&q=80" 
-                    },
-                    { 
-                        name: "Fıstıklı Girit Ezmesi", 
-                        note: "Ezine peyniri, ceviz, Antep fıstığı ve bahçe zeytinyağı", 
-                        price: "190 ₺", 
-                        img: "https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=250&q=80" 
-                    },
-                    { 
-                        name: "Köpoğlu Mancası", 
-                        note: "Köz patlıcan, süzme yoğurt ve tereyağlı domates sosu", 
-                        price: "175 ₺", 
-                        img: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=250&q=80" 
-                    }
+                    { name: "Acılı Atom", note: "Tereyağında kızarmış kurutulmuş Arnavut biberi & süzme yoğurt", price: "200 ₺", img: "https://i.ibb.co/NvkC3qV/AC-L-ATOM.jpg" },
+                    { name: "Haydari", note: "Yoğun süzme yoğurt, nane, sarımsak ve sızma zeytinyağı", price: "200 ₺", img: "https://i.ibb.co/PqtbBpw/HAYDAR.jpg" },
+                    { name: "Semiz Otu", note: "Taze bahçe semizotu ve yoğurtlu özel sos", price: "200 ₺", img: "https://i.ibb.co/qYcXkVtW/SEM-Z-OTU.jpg" },
+                    { name: "Acuka", note: "Cevizli ve baharatlı el yapımı biber salçası harmanı", price: "200 ₺", img: "https://i.ibb.co/mF86289b/AK-UKA.jpg" },
+                    { name: "Havuç Tarator", note: "Zeytinyağında sotelenmiş tatlı havuç ve sarımsaklı yoğurt", price: "200 ₺", img: "https://i.ibb.co/b5YtQv57/HAVU-TARATOR.jpg" },
+                    { name: "Zeytinyağlı Enginar", note: "Garnitürlü taze enginar kalbi ve dereotlu zeytinyağlı sos", price: "300 ₺", img: "https://i.ibb.co/BKYMZjWC/ZEYT-NYA-L-ENG-NAR.jpg" },
+                    { name: "Beyaz Peynir", note: "Tam yağlı olgunlaştırılmış Ezine peyniri dilimleri", price: "200 ₺", img: "https://i.ibb.co/QvwzLLDM/Beyaz-Peynir.jpg" },
+                    { name: "Girit Ezmesi", note: "Ezine peyniri, Antep fıstığı, ceviz ve taze baharatlar", price: "200 ₺", img: "https://i.ibb.co/tMtdHCsN/G-R-T.jpg" },
+                    { name: "Şakşuka", note: "Kızarmış patlıcan, tatlı biber ve sarımsaklı domates sosu", price: "200 ₺", img: "https://i.ibb.co/svcJG5bH/KAR-K-K-ZARTMA.jpg" },
+                    { name: "Patlıcan Salatası", note: "Meşe kömüründe közlenmiş patlıcan ve zeytinyağı", price: "200 ₺", img: "https://i.ibb.co/j2YXtBb/PATL-CAN-SALATAS.jpg" },
+                    { name: "Amerikan Salatası", note: "Küp garnitürler, kornişon turşu ve mayonez sosu", price: "200 ₺", img: "https://i.ibb.co/QFNjVsDv/AMER-KAN-SALATAS.jpg" },
+                    { name: "Ev Turşusu", note: "Çıtır karışık ev yapımı mevsim turşusu", price: "200 ₺", img: "https://i.ibb.co/fz7S0X7m/EV-TUR-USU.jpg" },
+                    { name: "Manda Yoğurdu", note: "Koyun-manda kıvamında kaymaklı doğal köy yoğurdu", price: "250 ₺", img: "https://i.ibb.co/kjpc0Lg/MANDA-YO-URDU.jpg" }
                 ]
             },
             arasicaklar: {
                 title: "Ara Sıcaklar",
                 items: [
-                    { 
-                        name: "Güveçte Kaşarlı Mantar", 
-                        note: "Odun fırınında tereyağlı ve nar gibi kızarmış kaşarlı mantar", 
-                        price: "240 ₺", 
-                        img: "https://images.unsplash.com/photo-1608897013039-887f21d8c804?auto=format&fit=crop&w=250&q=80" 
-                    },
-                    { 
-                        name: "Yaprak Ciğer", 
-                        note: "İncecik doğranmış dana ciğeri, sumaklı piyaz soğan eşliğinde", 
-                        price: "340 ₺", 
-                        img: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=250&q=80" 
-                    },
-                    { 
-                        name: "Kızarmış İçli Köfte (Adet)", 
-                        note: "Ceviz ve baharatlarla harmanlanmış dana kıymalı iç dolgu", 
-                        price: "120 ₺", 
-                        img: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=250&q=80" 
-                    }
+                    { name: "İstiridye Mantarı", note: "Tereyağında sotelenmiş taze istiridye mantarı", price: "350 ₺", img: "https://i.ibb.co/GQPtmfk8/ST-R-DYE-MANTAR.jpg" },
+                    { name: "Kaşarlı Mantar", note: "Güveçte nar gibi eriyen kaşar peynirli fırın mantar", price: "250 ₺", img: "https://i.ibb.co/qLz2dp1z/KA-ARL-MANTAR.jpg" },
+                    { name: "Hellim Peyniri", note: "Izgara edilmiş sıcacık çıtır hellim peyniri dilimleri", price: "250 ₺", img: "https://i.ibb.co/Ps3NFGHt/HELL-M-PEYN-R.jpg" },
+                    { name: "Izgara Patates", note: "Kömür ateşinde marine edilmiş ızgara patates dilimleri", price: "200 ₺", img: "https://i.ibb.co/mVDjkM2F/ZGARA-PATATES.jpg" },
+                    { name: "Kaşarlı Közde Patlıcan", note: "Odun ateşinde közlenmiş patlıcan üzerine erimiş kaşar", price: "250 ₺", img: "https://i.ibb.co/mrhbCwL6/KA-ARL-K-ZDE-PATL-CAN.jpg" },
+                    { name: "Patates Kızartması", note: "Altın sarısı çıtır parmak patates", price: "250 ₺", img: "https://i.ibb.co/Fqd3kyVM/PATATES-K-ZARTMAS.jpg" },
+                    { name: "Karışık Kızartma", note: "Patates, patlıcan, biber ve domates soslu kızartma tabağı", price: "250 ₺", img: "https://i.ibb.co/svcJG5bH/KAR-K-K-ZARTMA.jpg" },
+                    { name: "Kaşarpane", note: "Dışı çıtır pane harçlı, içi uzayan sıcak kaşar peyniri", price: "250 ₺", img: "https://i.ibb.co/dsGyMZvt/KA-ARPANE.jpg" },
+                    { name: "Special Anatolia Peyniri", note: "Şefimizin özel sunumu ve marine edilmiş sıcak peyniri", price: "300 ₺", img: "https://i.ibb.co/8wqvdkp/SPEC-AL-ANATOL-A-PEYN-R.jpg" },
+                    { name: "Anatolia Misket Köfte", note: "Özel soslu ve tereyağlı çıtır misket köfteler", price: "350 ₺", img: "https://i.ibb.co/kgtn3r5z/ANATOL-A-M-SKET-K-FTE.jpg" }
                 ]
             },
             izgaralar: {
-                title: "Et Çeşitleri & Izgaralar",
+                title: "Et Çeşitleri",
                 items: [
-                    { 
-                        name: "Kuzu Pirzola", 
-                        note: "Marine edilmiş kuzu kalem pirzola, köz biber & domatesle", 
-                        price: "680 ₺", 
-                        img: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=250&q=80" 
-                    },
-                    { 
-                        name: "Kuzu Kaburga", 
-                        note: "Meşe kömüründe nar gibi kızarmış lokum kaburga", 
-                        price: "620 ₺", 
-                        img: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=250&q=80" 
-                    },
-                    { 
-                        name: "Kasap Köfte", 
-                        note: "Geleneksel baharat karışımı, ızgara biber ve sumaklı soğanla", 
-                        price: "420 ₺", 
-                        img: "https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=250&q=80" 
-                    },
-                    { 
-                        name: "Lokum Tavuk Şiş", 
-                        note: "Özel yoğurt sosunda marine edilmiş yumuşacık tavuk göğsü", 
-                        price: "360 ₺", 
-                        img: "https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=250&q=80" 
-                    },
-                    { 
-                        name: "Karışık Izgara Şöleni (2 Kişilik)", 
-                        note: "Pirzola, köfte, tavuk şiş, kasap sucuk ve köz lezzetleri", 
-                        price: "1.250 ₺", 
-                        img: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=250&q=80" 
-                    }
-                ]
-            },
-            salatalar: {
-                title: "Bahçe Salataları",
-                items: [
-                    { 
-                        name: "Gavurdağı Salatası", 
-                        note: "Küp bahçe domatesi, ceviz içi ve Hatay nar ekşisi ile", 
-                        price: "220 ₺", 
-                        img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=250&q=80" 
-                    },
-                    { 
-                        name: "Kır Bahçesi Mevsim Salatası", 
-                        note: "Taze roka, göbek, havuç, mor lahana ve zeytinyağlı limon sosu", 
-                        price: "180 ₺", 
-                        img: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=250&q=80" 
-                    }
-                ]
-            },
-            icecekler: {
-                title: "Alkol & İçecekler",
-                items: [
-                    { 
-                        name: "Yerli / Yabancı Soğuk Biralar", 
-                        note: "50 cl şişe ve kutu alternatifleri", 
-                        price: "160 ₺ - 220 ₺", 
-                        img: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=250&q=80" 
-                    },
-                    { 
-                        name: "Özel Şaraplar (Kadeh / Şişe)", 
-                        note: "Kırmızı, Beyaz ve Roze seçenekleri", 
-                        price: "280 ₺ / 950 ₺", 
-                        img: "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=250&q=80" 
-                    },
-                    { 
-                        name: "Meşrubat Çeşitleri", 
-                        note: "Kola, Fanta, Gazoz, Cappy Meyve Suyu", 
-                        price: "70 ₺", 
-                        img: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=250&q=80" 
-                    },
-                    { 
-                        name: "Köpüklü Yayık Ayranı", 
-                        note: "Geleneksel yöntemle çalkalanmış taze yayık ayranı", 
-                        price: "50 ₺", 
-                        img: "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=250&q=80" 
-                    },
-                    { 
-                        name: "Semaverde Odun Ateşi Çayı", 
-                        note: "Kır bahçemizde misafirlerimize sınırsız ikramımızdır", 
-                        price: "İkram", 
-                        img: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=250&q=80" 
-                    }
+                    { name: "Yaprak Kanat", note: "Özel baharatlarla marine edilmiş ızgara kanat", price: "1.200 ₺ / KG", img: "https://i.ibb.co/qYNkyyBV/YAPRAK-KANAT.jpg" },
+                    { name: "Köfte", note: "Özel harçlı geleneksel kasap köfte, ızgara biber & domatesle", price: "1.500 ₺ / KG", img: "https://i.ibb.co/JRsNNYjS/K-FTE.jpg" },
+                    { name: "Sucuk", note: "Kömür ateşinde pişmiş parmak kasap sucuk", price: "1.500 ₺ / KG", img: "https://i.ibb.co/XfwL1nRN/SUCUK.jpg" },
+                    { name: "Kuzu Şiş", note: "Lokum kıvamında dinlendirilmiş kuzu but şiş", price: "2.000 ₺ / KG", img: "https://i.ibb.co/5gmPhv2G/KUZU.jpg" },
+                    { name: "Kuzu Külbastı", note: "İnce dövülmüş ve marine kuzu külbastı dilimleri", price: "2.000 ₺ / KG", img: "https://i.ibb.co/CKRwsMMn/KUZU-K-LBAST.jpg" },
+                    { name: "Kuzu Pirzola", note: "Kuzu kalem pirzola, köz lezzetleri eşliğinde", price: "2.400 ₺ / KG", img: "https://i.ibb.co/v4jz6J39/KUZU-P-RZOLA.jpg" },
+                    { name: "Kuzu Tandır", note: "Ağır ateşte saatlerce pişmiş, damakta eriyen tandır eti", price: "2.200 ₺ / KG", img: "https://i.ibb.co/1fw13LFZ/KUZU-TAND-R.jpg" },
+                    { name: "Dana Antrikot", note: "Mermerimsi yağ dokulu, kömür ızgarada mühürlenmiş antrikot", price: "2.000 ₺ / KG", img: "https://i.ibb.co/0VhqGdcH/DANA-ANTR-KOT.jpg" },
+                    { name: "Sac Kavurma", note: "Kızgın sacda soğan, biber ve domatesle sotelenmiş dana eti", price: "750 ₺ / Porsiyon", img: "https://i.ibb.co/spn3qvgD/SAC-KAVURMA.jpg" }
                 ]
             },
             tatlilar: {
-                title: "Meyve & Tatlı",
+                title: "Tatlı ve Meyve Çeşitleri",
                 items: [
-                    { 
-                        name: "Hatay Usulü Çıtır Künefe", 
-                        note: "Sıcak şerbet, tuzsuz künefe peyniri ve Maraş dondurması", 
-                        price: "250 ₺", 
-                        img: "https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=250&q=80" 
-                    },
-                    { 
-                        name: "Mevsim Meyve Tabağı", 
-                        note: "Özenle dilimlenmiş taptaze bahçe ve mevsim meyveleri", 
-                        price: "280 ₺", 
-                        img: "https://images.unsplash.com/photo-1619566636858-adf3ef46400b?auto=format&fit=crop&w=250&q=80" 
-                    }
+                    { name: "Katmer Tatlısı", note: "Antep fıstıklı çıtır katmer (Dondurma veya Kaymaklı)", price: "300 ₺", img: "https://i.ibb.co/qYvC2WxC/KATMER-TATL-S.jpg" },
+                    { name: "Kabak Tatlısı", note: "Geleneksel kıvamda fırınlanmış, bol tahin ve ceviz ilaveli", price: "250 ₺", img: "https://i.ibb.co/sdTNbP4v/KABAK-TATL-S.jpg" },
+                    { name: "Hayrabolu Tatlısı", note: "Trakya yöresel peynir tatlısı, tahin ve kaymak eşliğinde", price: "200 ₺", img: "https://i.ibb.co/qL1sfYFV/HAYRABOLU-TATL-S.jpg" },
+                    { name: "Kavun", note: "Soğuk dilimlenmiş bal gibi tatlı kavun porsiyonu", price: "300 ₺", img: "https://i.ibb.co/qLMkd29h/KAVUN.jpg" },
+                    { name: "Karpuz", note: "Buz gibi ferahlatıcı taze karpuz dilimleri", price: "250 ₺", img: "https://i.ibb.co/2z17n4N/KARPUZ.jpg" },
+                    { name: "Mevsim Meyveleri Tabağı", note: "Mevsimin en taze meyvelerinden hazırlanan zengin sunum", price: "300 ₺", img: "https://i.ibb.co/JWY88Vxp/MEVS-M-MEYVELER-TABA.jpg" }
+                ]
+            },
+            icecekler: {
+                title: "İçecek Çeşitleri",
+                items: [
+                    { name: "Su 1.5 Litre", note: "Büyük boy doğal kaynak suyu", price: "80 ₺", img: "https://i.ibb.co/fzdR6wyW/SU-1-5-L-TRE.jpg" },
+                    { name: "Bardak Su", note: "Doğal kaynak suyu", price: "10 ₺", img: "https://i.ibb.co/XrxyCxkc/BARDAK-SU.jpg" },
+                    { name: "Kola", note: "Kutu / Şişe soğuk servis", price: "80 ₺", img: "https://i.ibb.co/Rk0vpNZ8/KOLA.jpg" },
+                    { name: "Zero Kola", note: "Şekersiz soğuk meşrubat", price: "80 ₺", img: "https://i.ibb.co/Rk0vpNZ8/KOLA.jpg" },
+                    { name: "Fanta", note: "Portakal aromalı gazlı içecek", price: "80 ₺", img: "https://i.ibb.co/pjYx9GsL/FANTA.jpg" },
+                    { name: "Fuse Tea Şeftali", note: "Soğuk çay şeftali aromalı", price: "80 ₺", img: "https://i.ibb.co/FpZQn3h/FUSE-TEA.jpg" },
+                    { name: "Fuse Tea Limon", note: "Soğuk çay limon aromalı", price: "80 ₺", img: "https://i.ibb.co/FpZQn3h/FUSE-TEA.jpg" },
+                    { name: "Fuse Tea Karpuz", note: "Ferahlatıcı karpuz lezzeti", price: "80 ₺", img: "https://i.ibb.co/FpZQn3h/FUSE-TEA.jpg" },
+                    { name: "Cappy Karışık", note: "Meyve nektarı", price: "80 ₺", img: "https://i.ibb.co/rKZwsqhJ/CAPPY-MEYVESUYU.jpg" },
+                    { name: "Cappy Şeftali", note: "Şeftali meyve suyu", price: "80 ₺", img: "https://i.ibb.co/rKZwsqhJ/CAPPY-MEYVESUYU.jpg" },
+                    { name: "Cappy Vişne", note: "Vişne meyve suyu", price: "80 ₺", img: "https://i.ibb.co/rKZwsqhJ/CAPPY-MEYVESUYU.jpg" },
+                    { name: "Sade Soda", note: "Doğal zengin mineralli maden suyu", price: "60 ₺", img: "https://i.ibb.co/xKxcQqqF/SADE-SODA.jpg" },
+                    { name: "Sıkma Limonlu Soda", note: "Taze sıkılmış limon suyu ile", price: "100 ₺", img: "https://i.ibb.co/zhdLCDPX/S-KMA-L-MONLU-SODA.jpg" },
+                    { name: "Churchill", note: "Maden suyu, taze limon suyu ve kaya tuzu", price: "200 ₺", img: "https://i.ibb.co/xSv0C3Dy/CHURCH-LL.jpg" },
+                    { name: "Şalgam", note: "Acılı / Acısız geleneksel şalgam", price: "80 ₺", img: "https://i.ibb.co/r21ykwVv/ALGAM.jpg" },
+                    { name: "Açık Yayık Ayran", note: "Bol köpüklü taze köy ayranı", price: "80 ₺", img: "https://i.ibb.co/35mksVG8/A-K-AYRAK.jpg" },
+                    { name: "Kutu Ayran", note: "Soğuk kapalı kutu ayran", price: "80 ₺", img: "https://i.ibb.co/k2p6xnMw/KUTU-AYRAN.jpg" },
+                    { name: "Semaver Çay", note: "Kömür ateşinde demlenen sıcak semaver keyfi", price: "400 ₺", img: "https://i.ibb.co/YBJ8w5V2/SEMAVER-AY.jpg" },
+                    { name: "Termos Çay", note: "Sıcak demlik termos çay servisi", price: "300 ₺", img: "https://i.ibb.co/8gfWtWVq/DEML-K-AY.jpg" },
+                    { name: "Demlik Çay", note: "Masaya özel demlik çay servisi", price: "350 ₺", img: "https://i.ibb.co/v5ztd4t/demlik-ay.jpg" },
+                    { name: "Türk Kahvesi", note: "Közde pişirilmiş bol köpüklü Türk kahvesi", price: "80 ₺", img: "https://i.ibb.co/GfW7c9Yc/T-RK-KAHVES.jpg" }
+                ]
+            },
+            alkol: {
+                title: "Alkollü Çeşitler",
+                notice: "Alkollü içeceklerimizin güncel çeşitleri ve servis seçenekleri için lütfen personelimizden bilgi alınız.",
+                items: [
+                    { name: "Geleneksel Rakı Çeşitleri", note: "Tek, Duble, 35'lik, 50'lik, 70'lik ve 100'lük seçenekler", price: "Bilgi Alınız", noPrice: true, img: "https://i.ibb.co/GfW7c9Yc/T-RK-KAHVES.jpg" },
+                    { name: "Soğuk Bira Çeşitleri", note: "Yerli ve yabancı 50 cl şişe & kutu alternatifleri", price: "Bilgi Alınız", noPrice: true, img: "https://i.ibb.co/GfW7c9Yc/T-RK-KAHVES.jpg" },
+                    { name: "Özel Şarap Kavımız", note: "Kırmızı, Beyaz ve Roze kadeh veya şişe seçenekleri", price: "Bilgi Alınız", noPrice: true, img: "https://i.ibb.co/GfW7c9Yc/T-RK-KAHVES.jpg" },
+                    { name: "Viski & Sert Alkollü İçecekler", note: "Kadeh veya şişe olarak servis edilmektedir", price: "Bilgi Alınız", noPrice: true, img: "https://i.ibb.co/GfW7c9Yc/T-RK-KAHVES.jpg" }
                 ]
             }
         };
 
-        function openCategory(key) {
+        const defaultSvgPlaceholder = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%23172714" width="100" height="100"/><circle cx="50" cy="50" r="30" stroke="%23d4af37" stroke-width="2" fill="none"/><text x="50" y="55" font-family="serif" font-size="20" fill="%23d4af37" text-anchor="middle">🍽️</text></svg>';
+
+        function openCategory(key, pushHistory = true) {
             const data = menuData[key];
             if (!data) return;
 
             document.getElementById('pageMainTitle').innerText = data.title;
             document.getElementById('detailCategoryTitle').innerText = data.title;
+
+            const noticeBox = document.getElementById('categoryNotice');
+            if (data.notice) {
+                noticeBox.innerText = data.notice;
+                noticeBox.style.display = 'block';
+            } else {
+                noticeBox.style.display = 'none';
+            }
 
             const container = document.getElementById('itemsContainer');
             container.innerHTML = '';
@@ -825,29 +747,58 @@
             data.items.forEach(item => {
                 const itemDiv = document.createElement('div');
                 itemDiv.className = 'food-item';
+                const badgeClass = item.noPrice ? 'price-badge no-price' : 'price-badge';
+
                 itemDiv.innerHTML = `
-                    <img src="${item.img}" alt="${item.name}" class="item-thumb">
+                    <img src="${item.img}" alt="${item.name}" class="item-thumb" loading="lazy" onerror="this.onerror=null;this.src='${defaultSvgPlaceholder}';">
                     <div class="item-text">
                         <div class="item-name">${item.name}</div>
                         <div class="item-note">${item.note}</div>
                     </div>
                     <div class="line-spacer"></div>
-                    <div class="price-badge">${item.price}</div>
+                    <div class="${badgeClass}">${item.price}</div>
                 `;
                 container.appendChild(itemDiv);
             });
 
             document.getElementById('mainCategoryView').style.display = 'none';
-            document.getElementById('detailView').style.display = 'block';
-            window.scrollTo({ top: 250, behavior: 'smooth' });
+            const detailView = document.getElementById('detailView');
+            detailView.style.display = 'block';
+
+            if (pushHistory) {
+                history.pushState({ category: key }, data.title, `#${key}`);
+            }
+
+            detailView.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
-        function showMainCategories() {
+        function showMainCategories(goBackHistory = false) {
             document.getElementById('pageMainTitle').innerText = 'Menümüz';
             document.getElementById('detailView').style.display = 'none';
-            document.getElementById('mainCategoryView').style.display = 'block';
-            window.scrollTo({ top: 250, behavior: 'smooth' });
+            const mainView = document.getElementById('mainCategoryView');
+            mainView.style.display = 'block';
+
+            if (goBackHistory && location.hash) {
+                history.pushState(null, '', location.pathname);
+            }
+
+            mainView.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
+
+        window.addEventListener('popstate', (e) => {
+            if (e.state && e.state.category) {
+                openCategory(e.state.category, false);
+            } else {
+                showMainCategories(false);
+            }
+        });
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const hash = window.location.hash.replace('#', '');
+            if (hash && menuData[hash]) {
+                openCategory(hash, false);
+            }
+        });
     </script>
 </body>
 </html>
